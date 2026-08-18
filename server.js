@@ -489,9 +489,7 @@ function seedIfEmpty(){
             // =========================================================================
             // 7. CLAUSTRO DOCENTE Y CATEDRÁTICOS
             // =========================================================================
-            const cDocentes = "Docente";
-            stmt.run("Prof. Roberto", "Girón", "Prof. Roberto Girón", "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400", cDocentes, "Catedrático de Administración y Economía.");
-            stmt.run("Profa. María", "Sosa", "Profa. María Sosa", fotoDefault, cDocentes, "Catedrática de Tecnologías de la Información.");
+            
     stmt.finalize(err2=>{if(err2)console.error('Error al cargar estudiantes:',err2.message);else console.log('Datos base cargados correctamente.');iniciarServidor();});
   });
 }
