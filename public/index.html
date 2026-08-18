@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anuario Digital 2026 del Instituto Profesional de Computación (IPC).">
+  <title>Anuario Digital 2026 | IPC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Paytone+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-ipc">
+<nav class="navbar navbar-expand-lg navbar-ipc sticky-top shadow-sm px-3 py-2">
+  <div class="container-fluid">
+    <button class="navbar-brand brand-button" data-navegar="inicio" aria-label="Ir al inicio"><span class="brand-mark">IPC</span><span class="d-none d-sm-inline">Instituto Profesional de Computación</span></button>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-label="Abrir menú"><i class="bi bi-list fs-2 text-white"></i></button>
+    <div class="collapse navbar-collapse" id="menuNavegacion">
+      <ul class="navbar-menu-ipc ms-auto mb-2 mb-lg-0">
+        <li><button class="nav-link-ipc active" data-navegar="inicio"><i class="bi bi-house-door-fill"></i> Inicio</button></li>
+        <li><button class="nav-link-ipc" data-navegar="historia"><i class="bi bi-book-half"></i> Historia</button></li>
+        <li><button class="nav-link-ipc" data-navegar="docentes"><i class="bi bi-person-video3"></i> Docentes</button></li>
+        <li><button class="nav-link-ipc" data-navegar="estudiantes"><i class="bi bi-people-fill"></i> Estudiantes</button></li>
+        <li><button class="nav-link-ipc" data-navegar="galeria"><i class="bi bi-images"></i> Galería</button></li>
+        <li><button class="nav-link-ipc" data-navegar="actividades"><i class="bi bi-calendar-event"></i> Actividades</button></li>
+        <li><button class="nav-link-ipc" data-navegar="logros"><i class="bi bi-trophy-fill"></i> Logros</button></li>
+        <li><button class="nav-link-ipc" data-navegar="mensajes"><i class="bi bi-chat-quote-fill"></i> Mensajes</button></li>
+      </ul>
+      <button class="btn btn-menu-modal ms-lg-3" type="button" data-bs-toggle="modal" data-bs-target="#modalGrados"><i class="bi bi-grid-fill me-1"></i> Grados / Secciones</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section id="vista-inicio" class="vista-seccion activa container py-5 text-center">
+  <div class="hero-kicker">PROMOCIÓN 2026</div>
+  <div class="d-flex align-items-center justify-content-center gap-3 mb-2"><h1 class="titulo-ipc m-0">IPC</h1><img src="img/mascota-ELI.png" alt="Mascota IPC" class="logo-mascota-ipc" onerror="this.style.display='none'"></div>
+  <p class="text-uppercase fw-bold text-ipc-slate letter-spacing-2 fs-7">Instituto Profesional de Computación</p>
+  <div class="marco-portada my-4 mx-auto shadow-lg"><img src="img/principal.png" class="img-fluid" alt="Promoción IPC 2026" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1400'"></div>
+  <h2 class="titulo-anuario-ano">ANUARIO DIGITAL 2026</h2>
+  <p class="hero-copy">Un espacio para conservar nuestra historia, nuestros rostros y los momentos que hicieron especial esta etapa.</p>
+  <div class="quick-grid mt-4">
+    <button class="quick-card" data-navegar="estudiantes"><i class="bi bi-search"></i><span>Buscar estudiantes</span><small>Encuentra tu fotografía</small></button>
+    <button class="quick-card" data-navegar="galeria"><i class="bi bi-camera"></i><span>Galería fotográfica</span><small>Momentos de nuestra promoción</small></button>
+    <button class="quick-card" data-navegar="mensajes"><i class="bi bi-pencil-square"></i><span>Dejar un mensaje</span><small>Comparte un recuerdo</small></button>
+  </div>
+</section>
+
+<section id="vista-historia" class="vista-seccion container py-5">
+  <div class="section-heading"><span class="eyebrow">NUESTRA HISTORIA</span><h2>Historia de la promoción</h2><p>Tres años de aprendizajes, retos, amistades y momentos que nos llevaron hasta este día.</p></div>
+  <div class="editor-card mb-5"><h3><i class="bi bi-book me-2"></i> El camino que compartimos</h3><p>Nuestra historia comenzó en 2024, cuando iniciamos 4to Perito en Administración de Empresas. Durante estos tres años crecimos como estudiantes y como personas, enfrentando nuevos retos, compartiendo experiencias y creando recuerdos que llevaremos con nosotros. En 2026, como 6to Perito en Administración de Empresas, culminamos esta etapa con la satisfacción de haber alcanzado nuestra meta y con la ilusión de comenzar un nuevo capítulo en nuestras vidas.</p></div>
+  <div class="timeline" id="timelineHistoria"></div>
+</section>
+
+<section id="vista-docentes" class="vista-seccion container py-5">
+  <div class="section-heading"><span class="eyebrow">FORMACIÓN</span><h2>Nuestros docentes</h2><p>Las personas que acompañaron nuestra formación durante esta etapa.</p></div>
+  <div id="contenedorDocentes" class="row g-4"></div>
+</section>
+
+<section id="vista-estudiantes" class="vista-seccion container py-5">
+  <div class="section-heading text-center"><span class="eyebrow">COMUNIDAD IPC</span><h2>Nuestra promoción</h2><p>Busca a un estudiante o selecciona un grado para conocer a sus integrantes.</p></div>
+  <div class="search-panel mx-auto mb-4">
+    <div class="search-box"><i class="bi bi-search"></i><input id="inputBuscador" type="search" autocomplete="off" placeholder="Buscar por nombre, apellido o grado..."><button id="btnLimpiarBusqueda" type="button">Limpiar</button></div>
+    <div class="search-help"><i class="bi bi-info-circle"></i> También puedes usar el botón <strong>Grados / Secciones</strong> del menú.</div>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="contenedorFiltrosRapidos">
+    <button class="btn btn-pill-ipc active" data-carrera="TODOS">Todos</button><button class="btn btn-pill-ipc" data-carrera="Básico">Ciclo Básico</button><button class="btn btn-pill-ipc" data-carrera="Computación">Computación</button><button class="btn btn-pill-ipc" data-carrera="Administración de Empresas">Administración</button><button class="btn btn-pill-ipc" data-carrera="Diseño Gráfico">Diseño Gráfico</button><button class="btn btn-pill-ipc" data-carrera="Perito Contador">Contador</button><button class="btn btn-pill-ipc" data-carrera="Secretariado">Secretariado</button><button class="btn btn-pill-ipc" data-carrera="Docente">Docentes</button>
+  </div>
+  <div id="encabezadoEstudiantes" class="students-heading mb-4"><div><span class="badge bg-ipc-slate" id="badgeFiltroActivo">VISTA GENERAL</span><h3 id="tituloSeccion">Todos los estudiantes</h3></div><div class="d-flex gap-2 align-items-center"><button id="btnVolverInicio" class="btn btn-sm btn-outline-secondary rounded-pill d-none">← Ver todos</button><span id="contadorEstudiantes" class="count-badge">Cargando...</span></div></div>
+  <div id="fraseSeccion" class="section-quote d-none"></div>
+  <div id="contenedorEstudiantes" class="row g-4"></div>
+</section>
+
+<section id="vista-galeria" class="vista-seccion container py-5">
+  <div class="section-heading"><span class="eyebrow">NUESTROS RECUERDOS</span><h2>Galería Fotográfica</h2><p>Un recorrido por los momentos, experiencias y recuerdos que marcaron nuestra etapa como promoción.</p></div>
+  <div class="editor-card mb-5"><h3><i class="bi bi-camera me-2"></i> Recuerdos que permanecen</h3><p>Cada fotografía guarda un momento especial de nuestra historia. Desde los días de clase hasta las actividades y momentos compartidos, esta galería reúne los recuerdos que hicieron de estos años una etapa inolvidable.</p></div>
+  <div id="contenedorGaleria"></div>
+</section>
+
+<section id="vista-actividades" class="vista-seccion container py-5">
+  <div class="section-heading"><span class="eyebrow">VIVIMOS LA ETAPA</span><h2>Actividades destacadas</h2><p>Aquí podrás registrar las actividades importantes de la promoción.</p></div>
+  <div id="contenedorActividades" class="row g-4"></div>
+</section>
+
+<section id="vista-logros" class="vista-seccion container py-5">
+  <div class="section-heading"><span class="eyebrow">ORGULLO</span><h2>Logros</h2><p>Reconocimientos, participaciones y logros que merecen quedar en nuestra historia.</p></div>
+  <div id="contenedorLogros" class="row g-4"></div>
+</section>
+
+<section id="vista-recuerdos" class="vista-seccion container py-5">
+  <div class="section-heading"><span class="eyebrow">PARA RECORDAR</span><h2>Recuerdos de la promoción</h2><p>Una sección para conservar anécdotas, frases y momentos que no queremos olvidar.</p></div>
+  <div id="contenedorRecuerdosInfo" class="row g-4"></div>
+</section>
+
+<section id="vista-mensajes" class="vista-seccion container py-5">
+  <div class="section-heading text-center"><span class="eyebrow">MENSAJES</span><h2>Muro de mensajes</h2><p>Comparte felicitaciones, anécdotas y palabras de despedida. Los mensajes pasan por un filtro automático de lenguaje ofensivo.</p></div>
+  <div id="alertaMensaje" class="alert d-none" role="alert"></div>
+  <div class="row g-4">
+    <div class="col-lg-4"><div class="message-form-card"><div class="form-icon"><i class="bi bi-chat-heart"></i></div><h3>Deja tu mensaje</h3><p class="text-ipc-gray">Tu correo se guarda para identificar la publicación. No se utiliza para mostrar publicidad.</p>
+      <form id="formRecuerdo" novalidate>
+        <div class="mb-3"><label for="nombreRecuerdo">Nombre completo *</label><input id="nombreRecuerdo" class="form-control form-control-ipc" maxlength="100" required></div>
+        <div class="mb-3"><label for="emailRecuerdo">Correo electrónico *</label><input id="emailRecuerdo" type="email" class="form-control form-control-ipc" maxlength="150" placeholder="ejemplo@gmail.com" required></div>
+        <div class="mb-3"><label for="seccionRecuerdo">Grado / Sección</label><select id="seccionRecuerdo" class="form-select form-control-ipc"><option value="">Seleccionar...</option><option>1ro Básico Secc. A</option><option>1ro Básico Secc. B</option><option>2do Básico Secc. A</option><option>2do Básico Secc. B</option><option>3ro Básico Secc. A</option><option>3ro Básico Secc. B</option><option>4to Bachillerato en Computación Secc. A</option><option>4to Bachillerato en Computación Secc. B</option><option>5to Bachillerato en Computación Secc. A</option><option>5to Bachillerato en Computación Secc. B</option><option>4to Perito en Administración de Empresas</option><option>5to Perito en Administración de Empresas</option><option>6to Perito en Administración de Empresas</option><option>4to Bachillerato en Diseño Gráfico</option><option>5to Bachillerato en Diseño Gráfico</option><option>4to Perito Contador</option><option>5to Perito Contador</option><option>6to Perito Contador</option><option>4to Secretariado Bilingüe</option><option>5to Secretariado Bilingüe</option><option>6to Secretariado Bilingüe</option></select></div>
+        <div class="mb-3"><label for="mensajeRecuerdo">Mensaje *</label><textarea id="mensajeRecuerdo" class="form-control form-control-ipc" rows="5" maxlength="1000" required placeholder="Escribe un recuerdo, felicitación o despedida..."></textarea><div class="form-text text-end"><span id="contadorMensaje">0</span>/1000</div></div>
+        <input id="websiteRecuerdo" class="d-none" tabindex="-1" autocomplete="off">
+        <div class="form-check mb-3"><input class="form-check-input" type="checkbox" id="aceptoMensaje" required><label class="form-check-label" for="aceptoMensaje">Acepto que mi mensaje sea publicado en el anuario.</label></div>
+        <button class="btn btn-ipc-navy w-100 py-2 rounded-3 fw-bold" type="submit"><i class="bi bi-send-fill me-2"></i>Publicar mensaje</button>
+      </form>
+    </div></div>
+    <div class="col-lg-8"><div class="messages-header"><h3>Mensajes de nuestra comunidad</h3><span id="contadorMensajes" class="count-badge">0</span></div><div id="contenedorRecuerdos" class="row g-3"></div></div>
+  </div>
+</section>
+
+<section id="vista-creditos" class="vista-seccion container py-5">
+  <div class="section-heading text-center"><span class="eyebrow">PROYECTO</span><h2>Créditos del proyecto</h2><p>Completa esta sección con los nombres de las personas que participaron en la creación del anuario.</p></div>
+  <div class="credits-grid" id="contenedorCreditos"></div>
+</section>
+</main>
+
+<footer class="footer-ipc"><div class="container"><div><strong>Anuario Digital 2026</strong><span>Instituto Profesional de Computación</span></div><div class="footer-links"><button data-navegar="creditos">Créditos</button><button data-navegar="mensajes">Mensajes</button><button data-navegar="inicio">Volver arriba</button></div></div></footer>
+
+<div class="modal fade" id="modalGrados" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content modal-ipc"><div class="modal-header bg-ipc-navy text-white border-0"><h5 class="modal-title fw-bold"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Grados y secciones</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body p-4"><p class="text-ipc-slate fw-semibold">Selecciona una sección para ver su frase general y sus estudiantes.</p><div class="row g-3">
+<div class="col-md-6"><div class="grade-group"><h6>Ciclo Básico</h6><div class="d-flex flex-wrap gap-2"><button class="btn btn-subgrado-ipc" data-carrera-sub="1ro Básico Secc. A">1ro A</button><button class="btn btn-subgrado-ipc" data-carrera-sub="1ro Básico Secc. B">1ro B</button><button class="btn btn-subgrado-ipc" data-carrera-sub="2do Básico Secc. A">2do A</button><button class="btn btn-subgrado-ipc" data-carrera-sub="2do Básico Secc. B">2do B</button><button class="btn btn-subgrado-ipc" data-carrera-sub="3ro Básico Secc. A">3ro A</button><button class="btn btn-subgrado-ipc" data-carrera-sub="3ro Básico Secc. B">3ro B</button></div></div></div>
+<div class="col-md-6"><div class="grade-group"><h6>Bachillerato en Computación</h6><div class="d-flex flex-wrap gap-2"><button class="btn btn-subgrado-ipc" data-carrera-sub="4to Bachillerato en Computación Secc. A">4to A</button><button class="btn btn-subgrado-ipc" data-carrera-sub="4to Bachillerato en Computación Secc. B">4to B</button><button class="btn btn-subgrado-ipc" data-carrera-sub="5to Bachillerato en Computación Secc. A">5to A</button><button class="btn btn-subgrado-ipc" data-carrera-sub="5to Bachillerato en Computación Secc. B">5to B</button></div></div></div>
+<div class="col-12"><div class="grade-group grade-featured"><h6><i class="bi bi-star-fill text-warning me-1"></i> Perito en Administración de Empresas</h6><div class="d-flex flex-wrap gap-2"><button class="btn btn-subgrado-ipc btn-subgrado-gold" data-carrera-sub="4to Perito en Administración de Empresas">4to Administración</button><button class="btn btn-subgrado-ipc btn-subgrado-gold" data-carrera-sub="5to Perito en Administración de Empresas">5to Administración</button><button class="btn btn-subgrado-ipc btn-subgrado-gold" data-carrera-sub="6to Perito en Administración de Empresas">6to Administración</button></div></div></div>
+<div class="col-md-4"><div class="grade-group"><h6>Diseño Gráfico</h6><div class="d-flex flex-wrap gap-2"><button class="btn btn-subgrado-ipc" data-carrera-sub="4to Bachillerato en Diseño Gráfico">4to Diseño</button><button class="btn btn-subgrado-ipc" data-carrera-sub="5to Bachillerato en Diseño Gráfico">5to Diseño</button></div></div></div>
+<div class="col-md-4"><div class="grade-group"><h6>Perito Contador</h6><div class="d-flex flex-wrap gap-2"><button class="btn btn-subgrado-ipc" data-carrera-sub="4to Perito Contador">4to Contador</button><button class="btn btn-subgrado-ipc" data-carrera-sub="5to Perito Contador">5to Contador</button><button class="btn btn-subgrado-ipc" data-carrera-sub="6to Perito Contador">6to Contador</button></div></div></div>
+<div class="col-md-4"><div class="grade-group"><h6>Secretariado Bilingüe</h6><div class="d-flex flex-wrap gap-2"><button class="btn btn-subgrado-ipc" data-carrera-sub="4to Secretariado Bilingüe">4to Secre</button><button class="btn btn-subgrado-ipc" data-carrera-sub="5to Secretariado Bilingüe">5to Secre</button><button class="btn btn-subgrado-ipc" data-carrera-sub="6to Secretariado Bilingüe">6to Secre</button></div></div></div>
+<div class="col-12"><div class="grade-group"><h6><i class="bi bi-person-badge-fill me-1"></i> Docentes</h6><button class="btn btn-subgrado-ipc" data-carrera-sub="Docente">Ver docentes</button></div></div>
+</div></div></div></div></div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3"><div id="toastGeneral" class="toast border-0 shadow" role="alert"><div class="toast-body" id="toastTexto"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
