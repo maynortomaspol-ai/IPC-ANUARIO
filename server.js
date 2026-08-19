@@ -138,7 +138,7 @@ function seedIfEmpty(){
             stmt.run("Martín Samuel", "Erazo Calderón", "Martín Samuel Erazo Calderón", "img/admon4/Martín Samuel Erazo Caldero .jpg", c4toAdmon);
             stmt.run("Marylin Pamela", "Tupul Carrera", "Marylin Pamela Tupul Carrera", "img/admon4/Marylin Pamela Tupul Carrera .jpg", c4toAdmon);
             stmt.run("Michael Antonio", "Juarros Paz", "Michael Antonio Juarros Paz", "img/admon4/Michael Antonio Juarros Paz.jpg", c4toAdmon);
-            stmt.run("Yasmí Fabiola", "Fuentes Yos", "Yasmí Fabiola Fuentes Yos", "img/admon4/Yasmí Fabiola Fuentes Yos.jpg", c4toAdmon);
+            stmt.run("Yasmí Fabiola", "Fuentes Yos", "Yasmí Fabiola Fuentes Yos", "img/admon4/Yasmí Fabiola fuentes Yos.jpg", c4toAdmon);
 
             // 2. CICLO BÁSICO
             const c1roBasicoA = "1ro Básico Secc. A";
@@ -486,9 +486,7 @@ function seedIfEmpty(){
     stmt.run("Lilian Melisa", "Pascual Pedro", "Lilian Melisa Pascual Pedro", "img/secre6/Lilian Melisa Pascual Pedro.png", c6toSecre);
     stmt.run("Nancy Paola", "Zepeda Vásquez", "Nancy Paola Zepeda Vásquez", "img/secre6/Nancy Paola Zepeda Vásquez.png", c6toSecre);
 
-            // =========================================================================
-            // 7. CLAUSTRO DOCENTE Y CATEDRÁTICOS
-            // =========================================================================
+          
             
     stmt.finalize(err2=>{if(err2)console.error('Error al cargar estudiantes:',err2.message);else console.log('Datos base cargados correctamente.');iniciarServidor();});
   });
